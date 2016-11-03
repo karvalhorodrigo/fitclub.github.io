@@ -1,0 +1,132 @@
+
+
+<div id="pagina1">
+<center>
+		<div id="page" class="single">
+		<div class="content">
+			<article class="article">
+				<div id="content_box" >
+										<div id="post-10790" class="g post post-10790 page type-page status-publish hentry">
+							<div class="single_page">
+								<header>
+									<h2 style="color:black" class="title">Calculadora de necessidades calóricas</h2>
+								</header>
+								<div class="post-content box mark-links">
+	<style><!--
+	td{ vertical-align: top; }
+	--></style>
+	<table style="height: 607px; width: 574px;" border="0" cellspacing="0" cellpadding="0">
+	<tbody>
+	<tr>
+	<td valign="top"><span style="font-family: Arial;"><script type="text/javascript" language="JavaScript">
+	function calcmain(form){
+	var factor = 1.0; var tfactor = 1.0; var weight; var lbm; if (form.radio1[0].checked == true) factor = 1.2; if (form.radio1[1].checked == true) factor = 1.375; if (form.radio1[2].checked == true) factor = 1.55; if (form.radio1[3].checked == true) factor = 1.725; if (form.radio1[4].checked == true) factor = 1.9; if (form.rme[0].checked == true) { weight = form.weight.value; } else { weight = form.weight.value * 2.2046; } lean = ((100 - form.lbm.value)/ 100) * weight; cals = (370 + (9.8 * lean)) * factor; prot = 0.2*cals/4; fat = 0.3*cals/9; carbs = 0.5*cals/4; form.MR.value = Math.round(cals); form.protein.value = Math.round(prot); form.fat.value = Math.round(fat); form.carbs.value = Math.round(carbs); } function clearForm(form){ form.weight.value = ""; form.lbm.value = ""; form.MR.value = ""; form.radio1[0].click(); form.rme[0].click(); form.protein.value = ""; form.fat.value = ""; form.carbs.value = ""; }
+	</script></span>
+
+	<center></center>&nbsp;
+
+	<form>
+<table width="25%" border="1" bgcolor="#f1f1f1">
+<tbody>
+<tr>
+<td width="33%">
+<div style="text-align: center;"></div>
+<table style="width: 220px; height: 85px;" border="0">
+<tbody>
+<tr>
+<td style="color:black; font:arial; text-align: center;">Introduza os seus dados abaixo:</td>
+</tr>
+<tr>
+<td style="color:black; font:arial; display: none;" align="center"><input style="width: 33px;" type="radio" name="rme" value="Inches" />lbs  <input style="width: 33px;" type="radio" checked="checked" name="rme" value="Metric" />kg</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 220px; height: 98px;" border="0">
+<tbody>
+<tr>
+<td style="color:black; font:arial;" align="right">Peso:</td>
+<td style="color:black; font:arial;"><input style="width: 33px;" type="text" name="weight" size="3" /></td>
+<td style="color:black; font:arial;">kg</td>
+</tr>
+<tr>
+<td style="color:black; font:arial;" align="right">Gordura Corporal:</td>
+<td style="color:black; font:arial;"><input style="width: 33px;" type="text" name="lbm" size="3" /></td>
+<td style="color:black; font:arial;">%</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table style="width: 300px; height: 183px;" border="0">
+<tbody>
+<tr>
+<td style="color:black; font:arial;">A seguir, selecione a opção que descreve o seu nível de atividade física:</td>
+</tr>
+<tr>
+<td style="color:black; font:arial;"><input type="radio" checked="checked" name="radio1" value="Sedentary" /><b>Sedentário</b></td>
+</tr>
+<tr>
+<td style="color:black; font:arial;"><input type="radio" name="radio1" value="Light" /><b>Um pouco ativo</b></td>
+</tr>
+<tr>
+<td style="color:black; font:arial;"><input type="radio" name="radio1" value="Moderate" /><b>Moderadamente ativo</b></td>
+</tr>
+<tr>
+<td style="color:black; font:arial;"><input type="radio" name="radio1" value="Heavy" /><b>Muito ativo</b></td>
+</tr>
+<tr>
+<td style="color:black; font:arial;"><input type="radio" name="radio1" value="Extreme" /><b>Extremamente ativo</b></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td width="33%">
+<table style="width: 200px; height: 151px;" border="0">
+<tbody>
+<tr>
+<td style="color:black; font:arial;">
+<div style="text-align: center;">Clique no botão Calcular para obter os resultados.</div>
+<center><input onclick="calcmain(this.form)" type="button" name="Calculate" value="Calcular" /><input onclick="clearForm(this.form)" type="button" value="Limpar" /></center></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table style="width: 300px; height: 151px;" border="0">
+<tbody>
+<tr>
+<td style="color:black; font:arial;"></td>
+</tr>
+<tr>
+<td style="color:black; font:arial;">kcals que gasta por dia: <input style="width: 33px;" type="text" name="MR" size="3" align="right" /> kcals/dia</td>
+</tr>
+<tr>
+<td style="color:black; font:arial;">Proteina necessária para manter a massa muscular: <input style="width: 33px;" type="text" name="protein" size="2" align="right" /> gramas/dia</td>
+</tr>
+<tr>
+<td style="color:black; font:arial;">Gordura para maximizar os níveis de testosterona: <input style="width: 33px;" type="text" name="fat" size="2" align="right" /> gramas/dia</td>
+</tr>
+<tr>
+<td style="color:black; font:arial;">Carbohidratos para maximizar os níveis de testosterona: <input style="width: 33px;" type="text" name="carbs" size="2" align="right" /> gramas/dia</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</form>&nbsp;
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+</div>
+</div>
+</div>
+
+<center>

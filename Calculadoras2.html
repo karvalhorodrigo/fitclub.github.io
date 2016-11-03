@@ -1,0 +1,207 @@
+<div id="pagina2">
+<h2 style="color:black">Calculadora de perda de peso</h2>
+													  <div class="content">
+													  <span style="font-family: Arial;"><script type="text/javascript" language="JavaScript">// <![CDATA[
+function calcloss(form){
+var factor = 1.0;
+var weight;
+var lbm;
+var loss;
+if (form.radio1[0].checked == true) factor = 1.2;
+if (form.radio1[1].checked == true) factor = 1.375;
+if (form.radio1[2].checked == true) factor = 1.55;
+if (form.radio1[3].checked == true) factor = 1.725;
+if (form.radio1[4].checked == true) factor = 1.9;
+if (form.rme[0].checked == true) {
+weight = form.weight.value;
+loss = form.loss.value;
+}
+else {
+weight = form.weight.value * 2.2046;
+loss = form.loss.value * 2.2046;
+}
+lean = ((100 - form.lbm.value)/ 100) * weight;
+fat = ((form.lbm.value)/ 100) * weight;
+prot = 1.14*lean;
+losscals = ((370 + (9.8 * lean)) * factor) - (loss/7 * 3500);
+MR = (370 + (9.8 * lean)) * factor;
+form.MR.value = Math.round(MR);
+form.losscals.value = Math.round(losscals);
+var remain = loss%100;
+var lint = Math.round(loss);
+remain = loss-lint;
+var suff = Math.round(remain*100);
+loss = lint + suff/100;
+form.pace.value = loss;
+pace_rate = loss * 0.45359237;
+form.pace.value = Math.round( pace_rate * 10 ) / 10;
+lossfat = 0.3*losscals/9;
+losscarbs = (losscals - 0.3*losscals - 4*prot)/4;
+form.losscals.value = Math.round(losscals);
+form.protein.value = Math.round(prot);
+form.lossfat.value = Math.round(lossfat);
+form.losscarbs.value = Math.round(losscarbs);
+maxloss = fat*31;
+mincals = ((370 + (9.8 * lean)) * factor) - (maxloss);
+if (mincals < 1200) {
+mincals = 1200
+maxloss = MR-1200;
+}
+mapace = maxloss*7/3500;
+var remain1 = mapace%100;
+var mint = Math.round(mapace);
+remain1 = mapace-mint;
+var suff1 = Math.round(remain1*100);
+mapace = mint + suff1/100;
+form.maxpace.value = mapace;
+
+mapace = mapace * 0.45359237;
+form.maxpace.value = Math.round( mapace * 10 ) / 10;
+
+
+maxlossfat = 0.3*mincals/9;
+maxlosscarbs = (mincals - 0.3*mincals - 4*prot)/4;
+form.mincals.value = Math.round(mincals);
+form.maxlossfat.value = Math.round(maxlossfat);
+form.maxlosscarbs.value = Math.round(maxlosscarbs);
+}
+function clearForm(form){
+form.weight.value = "";
+form.lbm.value = "";
+form.MR.value = "";
+form.radio1[0].click();
+form.rme[0].click();
+form.losscals.value = "";
+form.loss.value = "";
+form.pace.value = "";
+form.mincals.value = "";
+form.protein.value = "";
+form.lossfat.value = "";
+form.losscarbs.value = "";
+form.maxpace.value = "";
+form.maxlossfat.value = "";
+form.maxlosscarbs.value = "";
+}
+// ]]&gt;</script></span><center><form>
+<table width="95%" border="1" bgcolor="#f1f1f1">
+<tbody>
+<tr>
+<td width="35%">
+<table style="width: 175px; height: 76px;" border="0">
+<tbody>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1; text-align: center;">Introduza os seus dados abaixo:</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1; display: none;" align="center"><input type="radio" name="rme" value="Inches" />lbs  <input type="radio" checked="checked" name="rme" value="Metric" />kg</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 175px; height: 98px;" border="0">
+<tbody>
+<tr>
+<td style="background-color: #f1f1f1; color: black;" align="right">Peso:</td>
+<td><input type="text" name="weight" size="3" /></td>
+<td style="background-color: #f1f1f1; color: black;">kg</td>
+</tr>
+<tr>
+<td style="background-color: #f1f1f1; color: black;" align="right">Gordura corporal:</td>
+<td><input type="text" name="lbm" size="3" /></td>
+<td style="background-color: #f1f1f1; color: black;">%</td>
+</tr>
+<tr>
+<td style="background-color: #f1f1f1; color: black;" align="right">Perda semanal desejada:</td>
+<td><input type="text" name="loss" size="3" /></td>
+<td style="background-color: #f1f1f1; color: black;">kg</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table border="0">
+<tbody>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">A seguir, seleccione a opção que descreve o seu nível diário de atividade física:</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;"><input type="radio" checked="checked" name="radio1" value="Sedentary" /><b> Sedentário</b></td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;"><input type="radio" name="radio1" value="Light" /><b> Um pouco ativo</b></td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;"><input type="radio" name="radio1" value="Moderate" /><b> Moderadamente ativo</b></td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;"><input type="radio" name="radio1" value="Heavy" /><b> Muito ativo</b></td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;"><input type="radio" name="radio1" value="Extreme" /><b> Extremamente ativo</b></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td width="35%">
+<table border="0">
+<tbody>
+<tr>
+<td style="background-color: #f1f1f1;">
+<div style="text-align: center; color: black;">Clique no botão Calcular para obter os resultados.</div>
+<center><input onclick="calcloss(this.form)" type="button" value="Calcular" /><input onclick="clearForm(this.form)" type="button" value="Limpar" /></center></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table border="0">
+<tbody>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">kcals por dia para manter o peso atual: <input style="width:32px" type="text" name="MR" size="3" align="right" /> kcals/dia</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">Proteína necessária para manter a massa muscular durante a dieta: <input style="width:32px" type="text" name="protein" size="2" align="right" /> gramas/dia</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;" align="center"><b>Dieta para Perder <input style="width:32px" type="text" name="pace" size="1" align="right" />kg de Peso Por Semana:</b></td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">kcals por dia: <input style="width:32px" type="text" name="losscals" size="3" align="right" /> kcals/dia</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">Gordura para maximizar os níveis de testosterona: <input style="width:32px" type="text" name="lossfat" size="2" align="right" /> gramas/dia</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">Carbohidratos: <input style="width:32px" type="text" name="losscarbs" size="2" align="right" /> gramas/dia</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;" align="center"><b>Dieta para Perda Máxima de Gordura:</b></td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">Máximo de gordura que pode perder sem perder músculo: <input style="width:32px" type="text" name="maxpace" size="2" align="right" /> kg/semana</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">kcals por dia para atingir este valor máximo de perda de gordura: <input style="width:32px" type="text" name="mincals" size="3" align="right" /> kcals/dia</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">Gordura para maximizar os níveis de testosterona: <input style="width:32px" type="text" name="maxlossfat" size="2" align="right" /> gramas/dia</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">Carbohidratos: <input style="width:32px" type="text" name="maxlosscarbs" size="2" align="right" /> gramas/dia</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</form></center><!--- --------------------------------------------------------------------------------------------------------------------------------------- ---></td>
+</tr>
+</tbody>
+</table>
+													  </center>
+</div>
+</div>
+</div>
+</center>

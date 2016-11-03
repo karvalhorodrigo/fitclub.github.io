@@ -1,0 +1,146 @@
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+		<!--
+			FWTSlide by Adonis Ronquillo for Free Web Templates
+			www.freewebtemplates.com / www.doni.us
+			Images by Unprofound http://www.unprofound.com/
+			Released under the Creative Commons Attribution 3.0 License.
+		-->
+		<html xmlns="http://www.w3.org/1999/xhtml">
+			<head>
+				<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+				<meta name="description" content="" />
+				<meta name="keywords" content="" />
+				<title>FitClub</title>
+				<link href="http://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet" type="text/css" />
+				<link rel="stylesheet" type="text/css" href="fwt.css" />
+				
+				<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+				<script type="text/javascript" src="js/jquery.slidertron-0.3.1.js"></script>
+				<script type="text/javascript" src="js/jquery.poptrox-0.1.js"></script>
+				
+			</head>
+			<body>
+				<div id="outer">
+					<div id="header">
+						<div id="logo">
+							<h1><a href="index.html">Fitness<span>Club</span></a></h1>
+						</div>
+						<div id="nav">
+							<ul>
+								<li>
+									<a href="treinos.html">Treinos</a>
+								</li>
+								<li class="first active">
+									<a href="alimentacao.html">Alimentação</a>
+								</li>
+									<a href="suplementacao.html">Suplementos</a>
+								<li class="last">
+							<a href="anabolicos.html">Anabólicos</a>
+						</li>
+					</ul>
+					<br class="clear" />
+				</div>
+			</div>	
+				<br class="clear" />
+			</div>
+
+		</div>
+		<script type="text/javascript">
+	$(document).ready(function(e) {
+		$('.btn_modal').click(function(e){
+			e.preventDefault();
+			var url = $(this).attr('href')
+			$('.box-modal-load').load("Calculadoras.html");
+			$('#modal').fadeIn(500);
+		});
+		$('.btn_modal2').click(function(e){
+			e.preventDefault();
+			var url = $(this).attr('href')			
+			$('.box-modal-load').load("Calculadoras2.html");			
+			$('#modal').fadeIn(500);
+		});
+		$('.btn_modal3').click(function(e){
+			e.preventDefault();
+			var url = $(this).attr('href')			
+			$('.box-modal-load').load("Calculadoras3.html");			
+			$('#modal').fadeIn(500);
+		});
+		$('#modal, .fechar').click(function(e){
+			if( e.target !== this ) 
+       			return;
+			$('#modal').fadeOut(500);	
+		});
+		
+		
+		
+    });
+</script>
+<style rel="stylesheet" type="text/css">
+	#modal{
+	background-color: rgba(0, 0, 0, 0.6);
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	}
+	.box-modal{
+	background:#FFF;
+	position:absolute;
+	top:20%;
+	left:30%;
+	width:auto;
+	height:auto;
+	padding: 20px;
+    border: 1px solid #888;
+	margin-left:-15%;
+	margin-top:-100px;
+	text-align:center;
+	}
+	.fechar{
+	color:#CCC;
+	cursor:pointer;
+	border:1px solid #CCC;
+	border-radius:7px;
+	padding:5px 10px;
+	position:absolute;
+	top:2px;
+	right:2px;
+	}
+	a.shit:link, a.shit:visited {
+    background-color: transparent;
+    color: white;
+    border: 2px solid green;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+	a.shit:hover, a.shit:active {
+    background-color: green;
+    color: white;
+}
+
+</style>
+
+<center>
+
+<h2>Calculadoras corporais</h2>
+    <a href="#pagina1" class="btn_modal shit">Calculadora de necessidades calóricas</a>
+    <a href="#pagina2" class="btn_modal2 shit">Calculadora de perda de peso</a>
+    <a href="#pagina3" class="btn_modal3 shit">Calculadora para ganho de massa muscular</a>
+	
+</center>
+    <div id="modal">
+        <div class="box-modal">
+        	<div class="box-modal-load"></div> 	
+            <div class="fechar">x</div>
+        </div> 
+	</div>
+		<div id="copyright">
+			FitnessClub by <a href="http://freewebtemplates.com">FWT</a>. jQuery by <a href="http://nodethirtythree.com/">N33</a>. Images by <a href="http://www.unprofound.com/">Unprofound</a>.
+		</div>
+	</body>
+</html>

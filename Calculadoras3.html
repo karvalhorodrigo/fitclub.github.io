@@ -1,0 +1,125 @@
+
+<div id="pagina3">
+<h3 style="color:black">Calculadora para ganho de massa muscular</h3>
+							<div class="post-content box mark-links">
+								
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="background-color: #ffffff;" valign="top">
+<span style="font-family: Arial;"><script type="text/javascript" language="JavaScript">// <![CDATA[
+function calcgain(form){ var factor = 1.0; var weight; var lbm; if (form.radio1[0].checked == true) factor = 1.2; if (form.radio1[1].checked == true) factor = 1.375; if (form.radio1[2].checked == true) factor = 1.55; if (form.radio1[3].checked == true) factor = 1.725; if (form.radio1[4].checked == true) factor = 1.9; if (form.rme[0].checked == true) { weight = form.weight.value; } else { weight = form.weight.value * 2.2046; } lean = ((100 - form.lbm.value)/ 100) * weight; prot = 0.907*lean; form.MR.value = Math.round((370 + (9.8 * lean)) * factor); if (form.notbeg[0].checked == true){ maxgainrate= (lean/268); gainratecals = 1.15*((maxgainrate * 454 / 7)*1.63 + ((maxgainrate * 454 / 7)/3)*7.91); } else { maxgainrate= (lean/148); gainratecals = 1.15*((maxgainrate * 454 / 7)*1.63 + ((maxgainrate * 454 / 7)/3)*7.91); } var remain = maxgainrate%100; var gint = Math.round(maxgainrate); remain = maxgainrate-gint; var suff = Math.round(remain*100); maxgainrate = gint + suff/100; form.maxrate.value = maxgainrate; gaincals = ((370 + (9.8 * lean)) * factor) + gainratecals; fat = 0.3*gaincals/9; carbs = (gaincals - 0.3*gaincals - 4*prot)/4; form.gaincals.value = Math.round(gaincals); form.protein.value = Math.round(prot); form.fat.value = Math.round(fat); form.carbs.value = Math.round(carbs); } function clearForm(form){ form.weight.value = ""; form.lbm.value = ""; form.MR.value = ""; form.notbeg[0].click(); form.radio1[0].click(); form.rme[0].click(); form.maxrate.value = ""; form.gaincals.value = ""; form.protein.value = ""; form.fat.value = ""; form.carbs.value = ""; }
+// ]]&gt;</script></span>
+
+<center>
+<form>
+<table width="95%" border="1" bgcolor="#f1f1f1">
+<tbody>
+<tr>
+<td width="35%">
+<div style="text-align: center;"></div>
+<table style="width: 177px; height: 77px;" border="0">
+<tbody>
+<tr>
+<td style="background-color: #f1f1f1; text-align: center;"><span style="color: black;">Introduza os seus dados abaixo</span>:</td>
+</tr>
+<tr>
+<td style="background-color: #f1f1f1; display: none;" align="center"><input type="radio" name="rme" value="Inches" />lbs  <input type="radio" checked="checked" name="rme" value="Metric" /><span style="color: black;">kg</span></td>
+</tr>
+</tbody>
+</table>
+<table style="width: 177px; height: 60px;" border="0">
+<tbody>
+<tr>
+<td style="background-color: #f1f1f1; color: black;" align="right">Peso:</td>
+<td><input type="text" name="weight" size="3" /></td>
+<td style="background-color: #f1f1f1;"><span style="color: black;">kg</span></td>
+</tr>
+<tr>
+<td style="background-color: #f1f1f1; color: black;" align="right">Gordura corporal:</td>
+<td><input type="text" name="lbm" size="3" /></td>
+<td style="background-color: #f1f1f1; color: black;">%</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 200px; height: 72px;" border="0">
+<tbody>
+<tr>
+<td style="background-color: #f1f1f1;" align="left"><input type="radio" checked="checked" name="notbeg" value="notbeginner" /><span style="color: white;"><span style="color: black;">Mais de 6 meses de experiência de treino</span> </span><br style="color: white;" /> <input style="color: white;" type="radio" name="notbeg" value="beginner" /><span style="color: black;">Menos de 6 meses de experiência de treino</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table border="0">
+<tbody>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">A seguir, clique na opção que melhor descreve o seu nível diário de actividade física:</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;"><input type="radio" checked="checked" name="radio1" value="Sedentary" /><b> Sedentário</b></td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;"><input type="radio" name="radio1" value="Light" /><b> Um pouco ativo</b></td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;"><input type="radio" name="radio1" value="Moderate" /><b> Moderadamente ativo</b></td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;"><input type="radio" name="radio1" value="Heavy" /><b> Muito ativo</b></td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;"><input type="radio" name="radio1" value="Extreme" /><b>Extremamente ativo</b></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td width="35%">
+<table style="background-color: #f1f1f1;" border="0">
+<tbody>
+<tr>
+<td style="background-color: #f1f1f1;">
+<div style="text-align: center;"><span style="color: black;">Clique no botão Calcular para calcular, ou no botão Limpar para limpar o formulário. Poderá ver os resultados à direita.  </span></div>
+<center><input onclick="calcgain(this.form)" type="button" value="Calcular" /><input onclick="clearForm(this.form)" type="button" value="Limpar" /></center></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table style="width: 330px; height: 172px;" border="0">
+<tbody>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">kcals por dia para manter o peso atual: <input style="width:33px" type="text" name="MR" size="3" align="right" /> kcals/dia</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">Máximo de musculo que pode ganhar por semana: <input style="width:33px" type="text" name="maxrate" size="2" align="right" /> kg/semana</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">kcals por dia para ganhar músculo com o mínimo de gordura: <input style="width:33px" type="text" name="gaincals" size="3" align="right" /> kcals/dia</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">Proteína para suportar o desenvolvimento muscular: <input style="width:33px" type="text" name="protein" size="2" align="right" /> gramas/dia</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">Gordura para maximizar os níveis de testosterona: <input style="width:33px" type="text" name="fat" size="2" align="right" /> gramas/dia</td>
+</tr>
+<tr style="color: black;">
+<td style="background-color: #f1f1f1;">Carbohidratos: <input style="width:33px" type="text" name="carbs" size="2" align="right" /> gramas/dia</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</form>&nbsp;
+
+</center><!--- --------------------------------------------------------------------------------------------------------------------------------------- ---></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>         
+</div>
