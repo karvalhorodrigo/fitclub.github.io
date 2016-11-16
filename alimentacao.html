@@ -65,6 +65,18 @@
 			$('.box-modal-load').load("Calculadoras3.html");			
 			$('#modal').fadeIn(500);
 		});
+		$('.btn_modal4').click(function(e){
+			e.preventDefault();
+			var url = $(this).attr('href')			
+			$('.box-modal-load').load("Alimentosdemassa.html");			
+			$('#modal').fadeIn(500);
+		});
+		$('.btn_modal5').click(function(e){
+			e.preventDefault();
+			var url = $(this).attr('href')			
+			$('.box-modal-load').load("Calculadoras2.html");			
+			$('#modal').fadeIn(500);
+		});
 		$('#modal, .fechar').click(function(e){
 			if( e.target !== this ) 
        			return;
@@ -117,7 +129,6 @@
     text-decoration: none;
     
 }
-
 	a.shit:hover, a.shit:active {
     background-color: green;
     color: white;
@@ -125,14 +136,22 @@
 
 </style>
 
-<center>
 
-<h2>Calculadoras corporais</h2>
-    <a href="#pagina1" class="btn_modal shit">Calculadora de necessidades calóricas</a>
+<head>
+<center><h2>Calculadoras corporais</h2>
+	<a href="#pagina1" class="btn_modal shit">Calculadora de necessidades calóricas</a>
     <a href="#pagina2" class="btn_modal2 shit">Calculadora de perda de peso</a>
     <a href="#pagina3" class="btn_modal3 shit">Calculadora para ganho de massa muscular</a>
 	
+	<br class="clear" />
+	<br class="clear" />
+	
+	<a href="#pagina5" class="btn_modal4 shit">Alimentos para ganho de massa muscular</a>
+	<a href="#pagina6" class="btn_modal5 shit">Calculadora para ganho de massa muscular</a>
+	
+
 </center>
+</head>
     <div id="modal">
         <div class="box-modal">
         	<div class="box-modal-load"></div> 	
